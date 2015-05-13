@@ -49,7 +49,7 @@ define("ember-pusher/bindings",
         this._super();
         if(!this.PUSHER_SUBSCRIPTIONS) { return; }
         target = this;
-        Object.keys(target.PUSHER_SUBSCRIPTIONS).forEach(function (channelName) {
+        Ember.keys(target.PUSHER_SUBSCRIPTIONS).forEach(function (channelName) {
           var events = target.PUSHER_SUBSCRIPTIONS[channelName];
           target.pusher.wire(target, channelName, events);
         });
@@ -59,7 +59,7 @@ define("ember-pusher/bindings",
         var target;
         if(!this.PUSHER_SUBSCRIPTIONS) { return; }
         target = this;
-        Object.keys(target.PUSHER_SUBSCRIPTIONS).forEach(function (channelName) {
+        Ember.keys(target.PUSHER_SUBSCRIPTIONS).forEach(function (channelName) {
           target.pusher.unwire(target, channelName);
         });
         this._super();
@@ -202,7 +202,7 @@ define("ember-pusher/controller",
         if(!bindings[channelName]) {
           bindings[channelName] = { eventBindings: {} };
         }
-        if(Ember.isEmpty(Object.keys(bindings[channelName].eventBindings))) {
+        if(Ember.isEmpty(Ember.keys(bindings[channelName].eventBindings))) {
           bindings[channelName].channel = pusher.subscribe(channelName);
 
           // Spit out a bunch of logging if asked
@@ -232,7 +232,7 @@ define("ember-pusher/controller",
         delete bindings[channelName].eventBindings[targetId];
 
         // Unsubscribe from the channel if this is the last thing listening
-        if(Object.keys(bindings[channelName].eventBindings).length === 0) {
+        if(Ember.keys(bindings[channelName].eventBindings).length === 0) {
           pusher.unsubscribe(channelName);
           delete bindings[channelName];
           return true;
@@ -295,7 +295,7 @@ define("ember-pusher/initializer",
           options = application.PUSHER_OPTS;
 
           Ember.assert("You need to provide PUSHER_OPTS on your application", options);
-          Ember.assert("You need to include the pusher libraries", Pusher);
+          Ember.assert("You need to include the pusher libraries", typeof Pusher !== 'undefined');
           pusher = new Pusher(options.key, options.connection);
           pusherController.didCreatePusher(pusher);
 
