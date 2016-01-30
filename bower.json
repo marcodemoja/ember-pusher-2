@@ -7,7 +7,7 @@
     "./ember-pusher.amd.js"
   ],
   "dependencies": {
-    "ember": ">=1.2",
+    "ember": ">=2.2",
     "pusher": ">=2.2.4"
   }
 }
