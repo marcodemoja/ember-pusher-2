@@ -35,7 +35,7 @@ var define, requireModule;
   };
 })();
 
-define("ember-pusher/bindings",
+define("ember-pusher-2/bindings",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -74,7 +74,7 @@ define("ember-pusher/bindings",
 
     __exports__.Bindings = Bindings;
   });
-define("ember-pusher/client_events",
+define("ember-pusher-2/client_events",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -95,7 +95,7 @@ define("ember-pusher/client_events",
 
     __exports__.ClientEvents = ClientEvents;
   });
-define("ember-pusher/controller",
+define("ember-pusher-2/controller",
   ["exports"],
   function(__exports__) {
     "use strict";
@@ -267,8 +267,8 @@ define("ember-pusher/controller",
 
     __exports__.Controller = Controller;
   });
-define("ember-pusher/instance-initializer",
-  ["ember-pusher/controller","exports"],
+define("ember-pusher-2/instance-initializer",
+  ["ember-pusher-2/controller","exports"],
   function(__dependency1__, __exports__) {
     "use strict";
     var Controller = __dependency1__.Controller;
@@ -310,8 +310,8 @@ define("ember-pusher/instance-initializer",
 
     __exports__.initialize = initialize;
   });
-define("ember-pusher",
-  ["ember-pusher/controller","ember-pusher/bindings","ember-pusher/client_events","ember-pusher/initializer","exports"],
+define("ember-pusher-2",
+  ["ember-pusher/controller","ember-pusher-2/bindings","ember-pusher-2/client_events","ember-pusher-2/instance-initializer","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
     "use strict";
     var Controller = __dependency1__.Controller;
@@ -328,5 +328,5 @@ define("ember-pusher",
     __exports__.ClientEvents = ClientEvents;
     __exports__.initialize = initialize;
   });
-window.EmberPusher = requireModule("ember-pusher");
+window.EmberPusher = requireModule("ember-pusher-2");
 })(window);

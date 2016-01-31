@@ -10,7 +10,7 @@ This is a shim repository that keeps the Ember Pusher component for
 ```js
 {
   "dependencies": {
-    "ember-pusher": "0.1.1"
+    "ember-pusher-2": "0.1.1"
   }
 }
 ```

@@ -1,6 +1,6 @@
 {
-  "name": "ember-pusher",
-  "version": "0.2.1",
+  "name": "ember-pusher-2",
+  "version": "0.1.1",
   "main": [
     "./ember-pusher.js",
     "./ember-pusher.min.js",
